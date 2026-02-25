@@ -1,44 +1,40 @@
+import pinterestImg from "../assets/pinterest.jpg"
+import contentImg from "../assets/content.jpg"
+import PortfolioImg from"../assets/portfolio.jpg"
+
+
 const projects = [
   {
-    title: "Promptsmint",
+    title: "Pinterest",
     description:
       "A curated prompt library with optimized prompts for business and personal tasks across domains.",
-    image: "https://via.placeholder.com/800x500",
+    image: pinterestImg,
     tags: ["AI", "Prompts", "Productivity"],
     visit: "#",
     github: "#",
     status: "active",
   },
   {
-    title: "amankumar.ai Website",
+    title: "portfolio Website",
     description:
       "Crafted from scratch with Next.js, TailwindCSS and modern UI principles.",
-    image: "https://via.placeholder.com/800x500",
+    image: PortfolioImg,
     tags: ["Personal"],
     visit: "#",
     github: null,
     status: "active",
   },
   {
-    title: "AidenGPT",
+    title: "Ai Content Generator",
     description:
       "AI-powered productivity platform with 20+ tools for writing, SEO and automation.",
-    image: "https://via.placeholder.com/800x500",
+    image: contentImg,
     tags: ["AI", "Tools"],
     visit: "#",
     github: "#",
     status: "active",
   },
-  {
-    title: "godaddycheck",
-    description:
-      "Python package & CLI tool for checking domain availability using GoDaddy API.",
-    image: "https://via.placeholder.com/800x500",
-    tags: ["Python", "CLI"],
-    visit: "#",
-    github: "#",
-    status: "active",
-  },
+ 
 ]
 
 const Projects = () => {

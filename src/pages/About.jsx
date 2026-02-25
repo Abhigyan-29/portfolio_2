@@ -7,12 +7,12 @@ const About = () => {
 
       {/* Tagline */}
       <p className="text-gray-400 tracking-wide uppercase text-sm mb-8">
-        FULL-STACK DEV • AI ENGINEER • LLMs • STARTUPS • MUSIC • F1 • READING
+        FULL-STACK DEV • AI ENGINEER  • STARTUPS • MUSIC • SPORTS • GAMES
       </p>
 
       {/* Tech Pills */}
       <div className="flex flex-wrap gap-3 mb-14">
-        {["React", "LLM", "Node.js", "Next.js", "TypeScript", "Postgres", "Redis"].map((tech, i) => (
+        {["Java","React", "Node.js", "Next.js"].map((tech, i) => (
           <span
             key={i}
             className="px-4 py-1 text-sm rounded-full bg-[#1a1a1a] border border-[#262626] text-gray-300"
@@ -25,31 +25,23 @@ const About = () => {
       {/* Sections */}
 
       <Section title="Who I Am">
-        Hello! I'm Abhigyan, a Bengaluru-based engineer passionate about
-        building tools that simplify people's lives. I've been coding since 2018,
-        writing about AI, LLMs, frontend, backend, and databases.
+       Hi, I’m Abhigyan, a Bengaluru-based Computer Science engineer with a solid foundation in Data Structures and Algorithms and full-stack development. I’m passionate about building efficient, scalable applications and constantly learning modern technologies to stay ahead in the tech landscape.
       </Section>
 
       <Section title="What I Do">
-        Currently a Founding Engineer building practical, user-facing products.
-        I focus on building things people actually use daily — less demo energy,
-        more real-world impact.
+        Currently building practical, user-focused products with real-world impact. I focus on developing applications that people actually use daily — prioritizing usability, performance, and scalability. I’m actively working on unique projects and stealth startup-style platforms while continuously sharpening my engineering skills.
       </Section>
 
       <Section title="My Journey">
-        Co-built multiple startup projects, shipped MVPs to production, and
-        launched AI-powered tools with active users. I enjoy rapid iteration,
-        shipping fast, and improving continuously.
+        A 2025 Computer Science graduate with experience collaborating with multiple startups, primarily contributing to frontend development and product planning. I’ve helped shape and ship MVPs to production, including AI-powered tools with active users. I enjoy rapid iteration, structured thinking, and continuously improving product experie
       </Section>
 
       <Section title="Vision">
-        LLMs and AI will automate the mundane and reshape how we work.
-        I aim to stay at the forefront of this transformation.
+       Artificial Intelligence is transforming the world and automating the mundane, enabling humans to focus on higher-impact work. I’m committed to staying ahead of this shift by actively exploring and building with AI-driven technologies.
       </Section>
 
       <Section title="Beyond Code">
-        Love techno & house music, follow F1, play chess, read regularly,
-        and explore new places.
+        Love sports and games , follow fitness, play volleyball,and explore new places.
       </Section>
 
       {/* Buttons */}

@@ -6,59 +6,80 @@ const Home = () => {
   const [news, setNews] = useState(null)
   const [loading, setLoading] = useState(true)
 
-  useEffect(() => {
-    const fetchNews = async () => {
-      try {
-        const res = await fetch(
-          "https://gnews.io/api/v4/search?q=AI&lang=en&max=1&apikey=387b4ab3dfad04d53e862ec2b5253bb7"
-        )
-        const data = await res.json()
-
-        if (data.articles && data.articles.length > 0) {
-          setNews(data.articles[0])
-        }
-      } catch (error) {
-        console.error("Error fetching news:", error)
-      } finally {
-        setLoading(false)
-      }
-    }
-
-    fetchNews()
-  }, [])
+ 
 
   return (
     
-    <div className="ml-72 p-16 max-w-full">
+    
+    <div className="ml-144 p-40 max-w-full ">
+<h1 className="
+  absolute top-10 right-16
+  text-xs md:text-sm
+  tracking-widest uppercase
+  text-gray-400
+  font-medium
+  transition-all duration-300
+  hover:text-white
+">
+  Developers love dark mode — so I built for the culture.
+</h1>
+<h1 className="
+  absolute bottom-30 left-80
+  text-xs md:text-sm
+  tracking-widest uppercase
+  text-gray-400
+  font-medium
+  transition-all duration-300
+  hover:text-white
+">
+  part logic, part madness, fully vibe coded
+</h1>
+
 
       {/* Heading */}
-     <motion.h1
-  initial={{ opacity: 0, y: 40 }}
+    <motion.h1
+  initial={{ opacity: 0, y: 50 }}
   animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8 }}
+  transition={{ duration: 0.9 }}
   className="text-[56px] font-semibold tracking-tight"
 >
   Hey, I'm{" "}
+  
   <span className="relative inline-block">
-    {/* Selection Background */}
+
+    {/* Neon Glow Layer */}
     <motion.span
-      initial={{ width: 0 }}
-      animate={{ width: "100%" }}
-      transition={{ duration: 0.8, delay: 0.4 }}
-      className="absolute left-0 top-0 h-full bg-purple-500/40 z-0"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: [0.4, 0.8, 0.4] }}
+      transition={{ duration: 3, repeat: Infinity }}
+      className="absolute inset-0 blur-lg bg-purple-600/30"
     />
 
-    {/* Text */}
-    <span className="relative z-10">
-      Abhigyan
-    </span>
+    {/* Animated Gradient Text */}
+    <motion.span
+      initial={{ backgroundPosition: "0% 50%" }}
+      animate={{ backgroundPosition: "200% 50%" }}
+      transition={{
+        duration: 5,
+        repeat: Infinity,
+        ease: "linear"
+      }}
+      className="relative z-10 bg-gradient-to-r 
+                 from-purple-400 via-cyan-400 to-purple-400
+                 bg-[length:200%_200%]
+                 bg-clip-text text-transparent"
+    >
+      Abhigyan !
+    </motion.span>
+
   </span>
 </motion.h1>
 
 
       <h2 className="text-[36px] font-bold text-gray-400 mb-10">
-        full-Stack Developer
+        Full-Stack Developer
       </h2>
+      
 
       {/* Resume Card */}
       <div
@@ -78,7 +99,7 @@ const Home = () => {
         </div>
 
         <a
-          href="https://drive.google.com/file/d/YOUR_FILE_ID/view"
+          href="https://drive.google.com/file/d/1xEtBi9MbGppowV2f8za5mL8PZH8xuJIc/view?usp=drive_link"
           target="_blank"
           rel="noopener noreferrer"
           className="
@@ -93,59 +114,29 @@ const Home = () => {
       </div>
 
       {/* About Text */}
-      <p className="text-[17px] text-gray-300 leading-relaxed mb-6">
-        I turn fuzzy ideas into live Products <em>(quickly)</em> full-stack AI Builder.
-      </p>
+      <div className="max-w-3xl space-y-6">
 
-      <p className="text-[17px] text-gray-300 leading-relaxed mb-14">
-        You can talk to me about <strong className="text-white">AI, new ideas, life</strong>.
-      </p>
+  <p className="text-[17px] leading-8 text-gray-300 tracking-wide transition-all duration-300 hover:text-white hover:-translate-y-1">
+    I turn ambiguous ideas into 
+    <span className="font-semibold bg-gradient-to-r from-yellow-400 to-amber-500 bg-clip-text text-transparent">
+      {" "}live, production-ready products{" "}
+    </span>
+    — quickly. Full-stack developer with a strong focus on AI-driven solutions.
+  </p>
 
-      {/* Dynamic News Card */}
-      {loading ? (
-        <div className="text-gray-400">Loading latest AI news...</div>
-      ) : news ? (
-        <a
-          href={news.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="
-            bg-[#1b1b1b]
-            border border-[#262626]
-            rounded-2xl p-6
-            flex gap-6
-            hover:-translate-y-1
-            hover:bg-[#202020]
-            transition-all duration-300
-          "
-        >
-          <img
-            src={news.image}
-            alt="news"
-            className="w-52 h-32 object-cover rounded-xl"
-          />
+  <p className="text-[16px] leading-7 text-gray-400 italic tracking-wide">
+    Flexible across time zones and comfortable collaborating with global teams.
+  </p>
 
-          <div>
-            <p className="text-xs text-gray-500 uppercase tracking-wide">
-              Latest AI News
-            </p>
+  <p className="text-[17px] leading-8 text-gray-300 tracking-wide transition-all duration-300 hover:text-white hover:-translate-y-1">
+    I thrive on execution. From concept to deployment, I iterate rapidly, refine continuously,
+    and build with momentum — transforming raw ideas into impactful, real-world solutions.
+  </p>
 
-            <h3 className="text-xl font-semibold mt-2">
-              {news.title}
-            </h3>
+</div>
 
-            <p className="text-gray-400 mt-2">
-              {news.description}
-            </p>
 
-            <p className="mt-4 text-white font-medium">
-              Read more →
-            </p>
-          </div>
-        </a>
-      ) : (
-        <div className="text-gray-400">No news available.</div>
-      )}
+   
 
     </div>
   )

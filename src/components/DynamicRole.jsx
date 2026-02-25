@@ -3,9 +3,9 @@ import { useEffect, useState } from "react"
 const roles = [
   "AI Engineer",
   "Full-Stack Developer",
-  "Product Builder",
-  "ML Enthusiast",
-  "Open Source Contributor"
+  "Photographer",
+  "Vibe Coder",
+  
 ]
 
 const DynamicRole = () => {

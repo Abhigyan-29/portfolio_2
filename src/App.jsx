@@ -7,6 +7,8 @@ import Home from "./pages/Home"
 import Projects from "./pages/Projects"
 import About from "./pages/About"
 import Tools from "./pages/Tools"
+import Experience from "./pages/Experience"
+import Current from"./pages/Current"
 
 function App() {
   const location = useLocation()
@@ -37,6 +39,8 @@ function App() {
               <Route path="/projects" element={<Projects />} />
               <Route path="/about" element={<About />} />
               <Route path="/tools" element={<Tools />} />
+              <Route path="/experience" element={<Experience />} />
+              <Route path="/current" element={<Current />} />
             </Routes>
           </motion.div>
         </AnimatePresence>

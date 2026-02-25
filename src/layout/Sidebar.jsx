@@ -5,13 +5,16 @@ import {
   Folder,
   User,
   Wrench,
+LaptopMinimal,
   Twitter,
   Linkedin,
-  Github
+  Github,
+  Heart
 } from "lucide-react"
 
 import DynamicRole from "../components/DynamicRole"
 import profilePic from "../assets/profile.jpg"
+
 
 const Sidebar = () => {
 
@@ -20,6 +23,8 @@ const Sidebar = () => {
     { name: "Projects", path: "/projects", icon: Folder },
     { name: "About", path: "/about", icon: User },
     { name: "Tools", path: "/tools", icon: Wrench },
+    { name: "Experience", path: "/experience", icon: LaptopMinimal },
+    { name: "Current", path: "/current", icon: Heart },
   ]
 
   return (
@@ -74,19 +79,19 @@ const Sidebar = () => {
         <SocialItem
           icon={Twitter}
           text="X (Twitter)"
-          url="https://twitter.com/yourusername"
+          url="https://twitter.com/abhigyan_29"
         />
 
         <SocialItem
           icon={Linkedin}
           text="LinkedIn"
-          url="https://linkedin.com/in/abhigyan"
+          url="https://linkedin.com/in/abhigyanprakash"
         />
 
         <SocialItem
           icon={Github}
           text="Github"
-          url="https://github.com/yourusername"
+          url="https://github.com/Abhigyan-29"
         />
       </div>
 

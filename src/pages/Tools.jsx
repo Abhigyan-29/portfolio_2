@@ -8,20 +8,20 @@ import {
 } from "lucide-react"
 
 const tools = [
-  { name: "Cursor", category: "IDE", icon: Code2 },
+  { name: "VSCode", category: "IDE", icon: Code2 },
   { name: "ChatGPT", category: "Productivity", icon: Sparkles },
   { name: "Notion", category: "Productivity", icon: Notebook },
-  { name: "PyCharm", category: "IDE", icon: Terminal },
-  { name: "Slack", category: "Communication", icon: MessageSquare },
-  { name: "Medium", category: "Writing", icon: PenTool },
+  { name: "IntellijIdea", category: "IDE", icon: Terminal },
+
 ]
 
 const Tools = () => {
   return (
-    <div className="ml-72 px-24 py-20">
+    <div className="ml-165 min-h-screen flex justify-center">
+  <div className="w-full max-w-6xl px-24 py-20">
 
       {/* Heading */}
-      <div className="text-center mb-16">
+      <div className="text-center mb-20">
         <h1 className="text-6xl font-semibold mb-4">Shovels</h1>
         <p className="text-gray-400 text-lg">
           Tools I frequently use to make life easier
@@ -38,7 +38,7 @@ const Tools = () => {
 
         </div>
       </div>
-
+</div>
     </div>
   )
 }
@@ -49,7 +49,7 @@ const ToolCard = ({ tool }) => {
   return (
     <div
       className="
-        w-[260px]
+        w-full max-w-[300px]
         bg-[#1b1b1b]
         border border-[#262626]
         rounded-xl
@@ -61,12 +61,10 @@ const ToolCard = ({ tool }) => {
         transition-all duration-300
       "
     >
-      {/* Icon Box */}
       <div className="w-12 h-12 flex items-center justify-center bg-[#141414] rounded-lg">
         <Icon size={22} className="text-gray-300" />
       </div>
 
-      {/* Text */}
       <div>
         <h3 className="text-lg font-semibold">{tool.name}</h3>
         <p className="text-sm text-gray-400">{tool.category}</p>
@@ -74,5 +72,6 @@ const ToolCard = ({ tool }) => {
     </div>
   )
 }
+
 
 export default Tools
