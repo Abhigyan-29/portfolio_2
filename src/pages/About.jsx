@@ -1,26 +1,51 @@
+import { motion } from "framer-motion"
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15 }
+  }
+}
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.5, ease: "easeOut" }
+  }
+}
+
 const About = () => {
   return (
-    <div className="ml-72 px-24 py-20 max-w-4xl">
+    <motion.div 
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      className="px-10 md:px-24 py-20 max-w-5xl relative"
+    >
 
       {/* Name */}
-      <h1 className="text-6xl font-semibold mb-6">Abhigyan</h1>
+      <motion.h1 variants={itemVariants} className="text-6xl font-semibold mb-6">Abhigyan</motion.h1>
 
       {/* Tagline */}
-      <p className="text-gray-400 tracking-wide uppercase text-sm mb-8">
+      <motion.p variants={itemVariants} className="text-gray-400 tracking-wide uppercase text-sm mb-8">
         FULL-STACK DEV • AI ENGINEER  • STARTUPS • MUSIC • SPORTS • GAMES
-      </p>
+      </motion.p>
 
       {/* Tech Pills */}
-      <div className="flex flex-wrap gap-3 mb-14">
+      <motion.div variants={itemVariants} className="flex flex-wrap gap-3 mb-14">
         {["Java","React", "Node.js", "Next.js"].map((tech, i) => (
-          <span
+          <motion.span
+            whileHover={{ scale: 1.05 }}
             key={i}
-            className="px-4 py-1 text-sm rounded-full bg-[#1a1a1a] border border-[#262626] text-gray-300"
+            className="px-4 py-1 text-sm rounded-full bg-white/5 border border-white/10 text-gray-300 backdrop-blur-md cursor-default shadow-[0_4px_10px_rgba(0,0,0,0.1)]"
           >
             {tech}
-          </span>
+          </motion.span>
         ))}
-      </div>
+      </motion.div>
 
       {/* Sections */}
 
@@ -45,34 +70,34 @@ const About = () => {
       </Section>
 
       {/* Buttons */}
-      <div className="flex gap-4 mt-12">
+      <motion.div variants={itemVariants} className="flex gap-4 mt-12">
         <a
           href="/contact"
-          className="bg-white text-black px-6 py-2 rounded-lg hover:opacity-80 transition"
+          className="bg-white text-black px-6 py-2 rounded-lg hover:opacity-90 hover:scale-105 active:scale-95 transition-all shadow-[0_0_15px_rgba(255,255,255,0.3)]"
         >
           Get in Touch
         </a>
 
         <a
           href="mailto:your@email.com"
-          className="border border-[#262626] px-6 py-2 rounded-lg hover:bg-[#1a1a1a] transition"
+          className="border border-white/20 px-6 py-2 rounded-lg hover:bg-white/10 hover:scale-105 active:scale-95 transition-all backdrop-blur-sm"
         >
           E-Mail
         </a>
-      </div>
+      </motion.div>
 
-    </div>
+    </motion.div>
   )
 }
 
 const Section = ({ title, children }) => {
   return (
-    <div className="mb-10">
-      <h2 className="text-xl font-semibold mb-3">{title}</h2>
+    <motion.div variants={itemVariants} className="mb-6 glass-card p-8 rounded-2xl">
+      <h2 className="text-xl font-semibold mb-3 text-white">{title}</h2>
       <p className="text-gray-400 leading-relaxed text-[16px]">
         {children}
       </p>
-    </div>
+    </motion.div>
   )
 }
 

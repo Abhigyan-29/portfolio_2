@@ -1,7 +1,25 @@
 import pinterestImg from "../assets/pinterest.jpg"
 import contentImg from "../assets/content.jpg"
 import PortfolioImg from"../assets/portfolio.jpg"
+import preptImg from "../assets/prept.jpg"
+import { motion } from "framer-motion"
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.2 }
+  }
+}
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.5, ease: "easeOut" }
+  }
+}
 
 const projects = [
   {
@@ -34,41 +52,62 @@ const projects = [
     github: "#",
     status: "active",
   },
- 
+  {
+    title: "Prept",
+    description:
+      "An AI-powered Interview Platform to help you practice and perfect your interview skills.",
+    image: preptImg,
+    tags: ["AI", "Interview Prep"],
+    visit: null,
+    github: "https://github.com/Abhigyan-29/prept",
+    status: "active",
+  },
 ]
 
 const Projects = () => {
   return (
-    <div className="ml-72 px-24 py-20">
+    <div className="px-10 md:px-24 py-20 relative">
 
       {/* Heading */}
-      <h1 className="text-5xl font-semibold mb-3">Projects</h1>
-      <p className="text-gray-400 mb-12">
-        Playground – Small MVP to Production Apps
-      </p>
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <h1 className="text-5xl font-semibold mb-3">Projects</h1>
+        <p className="text-gray-400 mb-12">
+          Playground – Small MVP to Production Apps
+        </p>
+      </motion.div>
 
       {/* Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <motion.div 
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="grid grid-cols-1 xl:grid-cols-2 gap-10"
+      >
 
         {projects.map((project, index) => (
-          <div
+          <motion.div
+            variants={cardVariants}
+            whileHover={{ y: -10 }}
             key={index}
             className="
-              bg-[#141414]
-              border border-[#262626]
+              glass-card
               rounded-2xl
               overflow-hidden
-              hover:-translate-y-2
-              hover:border-gray-500
-              transition-all duration-300
+              group
             "
           >
             {/* Image */}
-            <img
-              src={project.image}
-              alt={project.title}
-              className="w-full h-60 object-cover"
-            />
+            <div className="overflow-hidden">
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-60 object-cover transform group-hover:scale-110 transition-transform duration-700 ease-in-out"
+              />
+            </div>
 
             {/* Content */}
             <div className="p-6">
@@ -107,7 +146,7 @@ const Projects = () => {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="border border-gray-600 text-sm px-4 py-1 rounded hover:bg-gray-800 transition"
+                    className="border border-white/20 text-sm px-4 py-1 rounded hover:bg-white/10 transition backdrop-blur-sm"
                   >
                     GitHub
                   </a>
@@ -119,7 +158,7 @@ const Projects = () => {
                 {project.tags.map((tag, i) => (
                   <span
                     key={i}
-                    className="text-xs bg-[#1f1f1f] border border-[#2a2a2a] px-3 py-1 rounded-full text-gray-400"
+                    className="text-xs bg-white/5 border border-white/10 px-3 py-1 rounded-full text-gray-300 backdrop-blur-md"
                   >
                     {tag}
                   </span>
@@ -127,10 +166,10 @@ const Projects = () => {
               </div>
 
             </div>
-          </div>
+          </motion.div>
         ))}
 
-      </div>
+      </motion.div>
     </div>
   )
 }

@@ -11,29 +11,35 @@ const Home = () => {
   return (
     
     
-    <div className="ml-144 p-40 max-w-full ">
-<h1 className="
+    <div className="p-40 max-w-full relative">
+<motion.h1 
+  animate={{ y: [0, -10, 0] }}
+  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+  className="
   absolute top-10 right-16
   text-xs md:text-sm
   tracking-widest uppercase
-  text-gray-400
+  text-gray-500/50
   font-medium
   transition-all duration-300
   hover:text-white
 ">
   Developers love dark mode — so I built for the culture.
-</h1>
-<h1 className="
+</motion.h1>
+<motion.h1 
+  animate={{ y: [0, 10, 0] }}
+  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+  className="
   absolute bottom-30 left-80
   text-xs md:text-sm
   tracking-widest uppercase
-  text-gray-400
+  text-gray-500/50
   font-medium
   transition-all duration-300
   hover:text-white
 ">
   part logic, part madness, fully vibe coded
-</h1>
+</motion.h1>
 
 
       {/* Heading */}
@@ -82,58 +88,73 @@ const Home = () => {
       
 
       {/* Resume Card */}
-      <div
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 0.2, duration: 0.5 }}
         className="
-          bg-[#1b1b1b]
-          border border-[#262626]
+          glass-card
           rounded-xl px-6 py-4 mb-10
           flex items-center justify-between
-          hover:bg-[#202020]
-          transition
         "
       >
         <div className="flex items-center gap-4 text-[16px] font-semibold text-gray-300">
-          <FileHeartIcon size={20} />
+          <FileHeartIcon size={20} className="text-purple-400" />
           <DynamicResumeText />
 
         </div>
 
         <a
-          href="https://drive.google.com/file/d/1xEtBi9MbGppowV2f8za5mL8PZH8xuJIc/view?usp=drive_link"
+          href="https://drive.google.com/file/d/1sqsem-Om-6heMx17xw7GnUGf1xDUVm4P/view?usp=drive_link"
           target="_blank"
           rel="noopener noreferrer"
           className="
             bg-white text-black font-bold
             text-sm px-5 py-1 rounded
-            hover:opacity-80 hover:scale-105 active:scale-95
+            hover:opacity-90 hover:scale-105 active:scale-95
             transition-all duration-200
+            shadow-[0_0_15px_rgba(255,255,255,0.3)]
           "
         >
           My Resume
         </a>
-      </div>
+      </motion.div>
 
       {/* About Text */}
-      <div className="max-w-3xl space-y-6">
+      <motion.div 
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: {
+              staggerChildren: 0.2,
+              delayChildren: 0.4,
+            }
+          }
+        }}
+        className="max-w-3xl space-y-6"
+      >
 
-  <p className="text-[17px] leading-8 text-gray-300 tracking-wide transition-all duration-300 hover:text-white hover:-translate-y-1">
+  <motion.p variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }} className="text-[17px] leading-8 text-gray-300 tracking-wide transition-all duration-300 hover:text-white hover:-translate-y-1">
     I turn ambiguous ideas into 
-    <span className="font-semibold bg-gradient-to-r from-yellow-400 to-amber-500 bg-clip-text text-transparent">
+    <span className="font-semibold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
       {" "}live, production-ready products{" "}
     </span>
     — quickly. Full-stack developer with a strong focus on AI-driven solutions.
-  </p>
+  </motion.p>
 
-  <p className="text-[16px] leading-7 text-gray-400 italic tracking-wide">
+  <motion.p variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }} className="text-[16px] leading-7 text-gray-500 italic tracking-wide">
     Flexible across time zones and comfortable collaborating with global teams.
-  </p>
+  </motion.p>
 
-  <p className="text-[17px] leading-8 text-gray-300 tracking-wide transition-all duration-300 hover:text-white hover:-translate-y-1">
+  <motion.p variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }} className="text-[17px] leading-8 text-gray-300 tracking-wide transition-all duration-300 hover:text-white hover:-translate-y-1">
     I thrive on execution. From concept to deployment, I iterate rapidly, refine continuously,
     and build with momentum — transforming raw ideas into impactful, real-world solutions.
-  </p>
+  </motion.p>
 
-</div>
+</motion.div>
 
 
    

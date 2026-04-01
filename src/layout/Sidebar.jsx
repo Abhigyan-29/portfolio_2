@@ -34,8 +34,7 @@ const Sidebar = () => {
         h-screen
         fixed
         flex flex-col
-        bg-[#141414]
-        border-r border-[#262626]
+        glass-panel
         p-6
         z-40
       "
@@ -44,13 +43,14 @@ const Sidebar = () => {
       {/* Profile Section */}
       <div className="flex items-center gap-4 mb-12">
 
-        <img
+        <motion.img
+          whileHover={{ scale: 1.1, rotate: 5 }}
           src={profilePic}
-          alt="Aman"
+          alt="Abhigyan Prakash"
           className="
             w-12 h-12 rounded-full object-cover
-            border border-[#262626]
-            hover:scale-105 transition duration-300
+            border border-purple-500/30
+            shadow-[0_0_15px_rgba(147,51,234,0.3)]
           "
         />
 
@@ -79,7 +79,7 @@ const Sidebar = () => {
         <SocialItem
           icon={Twitter}
           text="X (Twitter)"
-          url="https://twitter.com/abhigyan_29"
+          url="https://twitter.com/sudo_nix"
         />
 
         <SocialItem
@@ -103,28 +103,28 @@ const Sidebar = () => {
 
 const NavItem = ({ to, text, Icon }) => {
   return (
-    <NavLink to={to} className="relative block">
+    <NavLink to={to} className="relative block group mb-1">
       {({ isActive }) => (
         <>
           {isActive && (
             <motion.div
               layoutId="activeIndicator"
-              className="absolute left-0 top-0 bottom-0 w-1 bg-white rounded-r"
+              className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-transparent border-l-2 border-purple-500 rounded-r-lg"
               transition={{ type: "spring", stiffness: 400, damping: 30 }}
             />
           )}
 
           <div
             className={`
-              flex items-center gap-3 px-4 py-2 rounded-lg transition-all duration-200
+              relative flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-300
               ${
                 isActive
-                  ? "bg-white text-black"
-                  : "text-gray-300 hover:bg-[#1f1f1f]"
+                  ? "text-white font-medium"
+                  : "text-gray-400 hover:text-white hover:bg-white/5"
               }
             `}
           >
-            <Icon size={18} />
+            <Icon size={18} className={`${isActive ? "text-purple-400" : "group-hover:text-purple-400 transition-colors duration-300"}`} />
             {text}
           </div>
         </>
@@ -135,19 +135,21 @@ const NavItem = ({ to, text, Icon }) => {
 
 const SocialItem = ({ icon: Icon, text, url }) => {
   return (
-    <a
+    <motion.a
+      whileHover={{ x: 5, color: "#fff" }}
       href={url}
       target="_blank"
       rel="noopener noreferrer"
       className="
-        flex items-center gap-3 mb-2
-        hover:text-white hover:translate-x-1
-        transition-all duration-200
+        flex items-center gap-3 mb-3
+        text-gray-400
+        transition-colors duration-200
+        group
       "
     >
-      <Icon size={16} />
+      <Icon size={16} className="text-gray-500 group-hover:text-cyan-400 transition-colors duration-300" />
       <span>{text}</span>
-    </a>
+    </motion.a>
   )
 }
 
