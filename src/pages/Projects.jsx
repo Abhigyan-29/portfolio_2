@@ -28,8 +28,8 @@ const projects = [
       "full-stack web app featuring dynamic image feeds, search, infinite scrolling",
     image: pinterestImg,
     tags: ["AI", "Prompts", "Productivity"],
-    visit: "#",
-    github: "#",
+    visit: "https://pinx-ejri.onrender.com/",
+    github: "https://github.com/Abhigyan-29/pin",
     status: "active",
   },
   {
@@ -48,8 +48,8 @@ const projects = [
       "AI-powered productivity platform with 20+ tools for writing, SEO and automation.",
     image: contentImg,
     tags: ["AI", "Tools"],
-    visit: "#",
-    github: "#",
+    visit: "https://ai-content-generator-vpw2.vercel.app/",
+    github: "https://github.com/Abhigyan-29/ai-content-generator",
     status: "active",
   },
   {
