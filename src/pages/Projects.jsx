@@ -58,7 +58,7 @@ const projects = [
       "An AI-powered Interview Platform to help you practice and perfect your interview skills.",
     image: preptImg,
     tags: ["AI", "Interview Prep"],
-    visit: null,
+    visit: "https://prept-7rbu.onrender.com/",
     github: "https://github.com/Abhigyan-29/prept",
     status: "active",
   },
