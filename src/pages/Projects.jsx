@@ -23,9 +23,9 @@ const cardVariants = {
 
 const projects = [
   {
-    title: "Pinterest",
+    title: "Pix",
     description:
-      "A curated prompt library with optimized prompts for business and personal tasks across domains.",
+      "full-stack web app featuring dynamic image feeds, search, infinite scrolling",
     image: pinterestImg,
     tags: ["AI", "Prompts", "Productivity"],
     visit: "#",
