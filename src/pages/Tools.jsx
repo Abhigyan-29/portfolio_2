@@ -38,8 +38,9 @@ const tools = [
   { name: "AntiGravity", category: "IDE", icon: brain },
   { name: "Cursor", category: "IDE", icon: brain-circuit },
   { name: "Claude", category: "IDE", icon: brain-cog },
-  { name: "MongoDB", category: "IDE", icon: database },
-  { name: "Postman", category: "IDE", icon: arrows-up-from-line },
+  { name: "MongoDB", category: "Database", icon: database },
+  { name: "Postman", category: "API Testing Tool
+", icon: arrows-up-from-line },
  
   
 
