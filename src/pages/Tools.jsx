@@ -4,7 +4,12 @@ import {
   Notebook,
   Terminal,
   PenTool,
-  Sparkles
+  Sparkles,
+  brain,
+  brain-circuit,
+  brain-cog,
+  database,
+  arrows-up-from-line
 } from "lucide-react"
 import { motion } from "framer-motion"
 
@@ -30,6 +35,13 @@ const tools = [
   { name: "ChatGPT", category: "Productivity", icon: Sparkles },
   { name: "Notion", category: "Productivity", icon: Notebook },
   { name: "IntellijIdea", category: "IDE", icon: Terminal },
+  { name: "AntiGravity", category: "IDE", icon: brain },
+  { name: "Cursor", category: "IDE", icon: brain-circuit },
+  { name: "Claude", category: "IDE", icon: brain-cog },
+  { name: "MongoDB", category: "IDE", icon: database },
+  { name: "Postman", category: "IDE", icon: arrows-up-from-line },
+ 
+  
 
 ]
 
