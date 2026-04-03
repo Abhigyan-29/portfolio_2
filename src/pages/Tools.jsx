@@ -7,7 +7,8 @@ import {
   BrainCircuit,
   BrainCog,
   Database,
-  ArrowUpFromLine
+  ArrowUpFromLine,
+  FolderGit
 } from "lucide-react";
 import { motion } from "framer-motion"
 
@@ -38,6 +39,7 @@ const tools = [
   { name: "Claude", category: "IDE", icon: BrainCog },
   { name: "MongoDB", category: "Database", icon: Database },
   { name: "Postman", category: "API Testing Tool", icon: ArrowUpFromLine },
+  { name: "Github", category: "Version Control Platform", icon: FolderGit },
 ]
 
 const Tools = () => {
