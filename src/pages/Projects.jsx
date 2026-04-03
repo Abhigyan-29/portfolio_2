@@ -3,6 +3,7 @@ import contentImg from "../assets/content.jpg"
 import PortfolioImg from"../assets/portfolio.jpg"
 import preptImg from "../assets/prept.jpg"
 import { motion } from "framer-motion"
+import char from "../assets/chat.jpg"
 
 const containerVariants = {
   hidden: { opacity: 0 },
