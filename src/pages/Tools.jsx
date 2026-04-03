@@ -1,16 +1,14 @@
 import {
   Code2,
-  MessageSquare,
   Notebook,
   Terminal,
-  PenTool,
   Sparkles,
-  brain,
-  brain-circuit,
-  brain-cog,
-  database,
-  arrows-up-from-line
-} from "lucide-react"
+  Brain,
+  BrainCircuit,
+  BrainCog,
+  Database,
+  ArrowUpFromLine
+} from "lucide-react";
 import { motion } from "framer-motion"
 
 const containerVariants = {
@@ -35,15 +33,11 @@ const tools = [
   { name: "ChatGPT", category: "Productivity", icon: Sparkles },
   { name: "Notion", category: "Productivity", icon: Notebook },
   { name: "IntellijIdea", category: "IDE", icon: Terminal },
-  { name: "AntiGravity", category: "IDE", icon: brain },
-  { name: "Cursor", category: "IDE", icon: brain-circuit },
-  { name: "Claude", category: "IDE", icon: brain-cog },
-  { name: "MongoDB", category: "Database", icon: database },
-  { name: "Postman", category: "API Testing Tool
-", icon: arrows-up-from-line },
- 
-  
-
+  { name: "AntiGravity", category: "IDE", icon: Brain },
+  { name: "Cursor", category: "IDE", icon: BrainCircuit },
+  { name: "Claude", category: "IDE", icon: BrainCog },
+  { name: "MongoDB", category: "Database", icon: Database },
+  { name: "Postman", category: "API Testing Tool", icon: ArrowUpFromLine },
 ]
 
 const Tools = () => {
