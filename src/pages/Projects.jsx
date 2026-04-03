@@ -43,6 +43,16 @@ const projects = [
     status: "active",
   },
   {
+    title: "Full-Stack Chat App",
+    description:
+      "A full Stack Chat app with frontend hosted on vercel and backend on render",
+    image: Chat,
+    tags: ["Chat,Social"],
+    visit: "https://ting-five.vercel.app/",
+    github: "https://github.com/Abhigyan-29/Ting",
+    status: "active",
+  },
+  {
     title: "Ai Content Generator",
     description:
       "AI-powered productivity platform with 20+ tools for writing, SEO and automation.",
