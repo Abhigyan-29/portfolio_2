@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react"
 
 const roles = [
-  "AI Engineer",
+  "Data Analyst",
   "Full-Stack Developer",
-  "Photographer",
-  "Vibe Coder",
+  "Software Engineer",
+  "BI Developer"
+
   
 ]
 
