@@ -31,7 +31,7 @@ const About = () => {
 
       {/* Tagline */}
       <motion.p variants={itemVariants} className="text-gray-400 tracking-wide uppercase text-sm mb-8">
-        FULL-STACK DEV • AI ENGINEER  • STARTUPS • MUSIC • SPORTS • GAMES
+        FULL-STACK DEV • DATA ANALYST • STARTUPS • SOFTWARE ENGINEER • SPORTS • GAMES
       </motion.p>
 
       {/* Tech Pills */}
