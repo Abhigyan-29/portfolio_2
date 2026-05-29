@@ -83,7 +83,7 @@ const Home = () => {
 
 
       <h2 className="text-[36px] font-bold text-gray-400 mb-10">
-        Full-Stack Developer
+        Software engineer
       </h2>
       
 
