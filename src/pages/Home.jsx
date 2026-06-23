@@ -105,7 +105,7 @@ const Home = () => {
         </div>
 
         <a
-          href="https://drive.google.com/file/d/1hK_xgNE5rT_Cfv9SlEvVhmAMg_e3MNDN/view?usp=sharing"
+          href="https://drive.google.com/file/d/1vp_eMIP8c7bMtk7OdJ7S2p-Yc7Wm1x0J/view?usp=drive_link"
           target="_blank"
           rel="noopener noreferrer"
           className="
